@@ -8,34 +8,7 @@
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-<script type="text/javascript">
-  var search;
-var searchInput = document.getElementById("search");
-var wikiURL = "https://en.wikipedia.org/wiki/";
 
-function search(string){
-  var site = "http://en.wikipedia.org/w/api.php?action=query&format=json&prop=info&list=search&titles=Main+Page&srsearch=" + string;
-  $.ajax({
-    url: site,
-    dataType: "jsonp",
-    success: function(data){
-    resultTitles(data.query.search);
-  }
-  });
-};
-
-function resultTitles(data){
-  $("#titlesList").empty();
-  for(var i = 0; i < data.length; i++){
-    $("#titlesList").append("<a href = '" +wikiURL + data[i].title + "'><button class='searchResult'><h2>" + data[i].title + "</h2><p>" + data[i].snippet + "</p></button></a>");
-};
-};
-
-$("#search-button").click(function(){
-  
-  search(searchInput.value);
-})
-</script>
 <style type="text/css">
   body {
   background-color: DarkOrchid;
@@ -69,3 +42,31 @@ $("#search-button").click(function(){
   </div>
   </body>
 </html>
+<script type="text/javascript">
+  var search;
+var searchInput = document.getElementById("search");
+var wikiURL = "https://en.wikipedia.org/wiki/";
+
+function search(string){
+  var site = "http://en.wikipedia.org/w/api.php?action=query&format=json&prop=info&list=search&titles=Main+Page&srsearch=" + string;
+  $.ajax({
+    url: site,
+    dataType: "jsonp",
+    success: function(data){
+    resultTitles(data.query.search);
+  }
+  });
+};
+
+function resultTitles(data){
+  $("#titlesList").empty();
+  for(var i = 0; i < data.length; i++){
+    $("#titlesList").append("<a href = '" +wikiURL + data[i].title + "'><button class='searchResult'><h2>" + data[i].title + "</h2><p>" + data[i].snippet + "</p></button></a>");
+};
+};
+
+$("#search-button").click(function(){
+  
+  search(searchInput.value);
+})
+</script>
