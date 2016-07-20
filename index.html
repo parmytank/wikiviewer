@@ -45,6 +45,7 @@
 
 <script type="text/javascript">
 var wikiURL = "https://en.wikipedia.org/wiki/";
+  var searchInput = document.getElementById("search");
 
 function search(string){
   var site = "http://en.wikipedia.org/w/api.php?action=query&format=json&prop=info&list=search&titles=Main+Page&srsearch=" + string;
@@ -67,8 +68,6 @@ function resultTitles(data){
 };
 
 $("#search-button").on('click', function(e){
-  var searchInput = document.getElementById("search");
   search(searchInput.value);
-  $("#titlesList").append(searchInput.value);
 })
 </script>
