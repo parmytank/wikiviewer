@@ -49,7 +49,7 @@ var wikiURL = "https://en.wikipedia.org/wiki/";
   var searchInput = document.getElementById("search");
 
 function search(string){
-  var site = "http://en.wikipedia.org/w/api.php?action=query&format=json&prop=info&list=search&titles=Main+Page&srsearch=" + string;
+  var site = "https://en.wikipedia.org/w/api.php?action=query&format=json&prop=info&list=search&titles=Main+Page&srsearch=" + string;
   $.ajax({
     url: site,
     dataType: "jsonp",
