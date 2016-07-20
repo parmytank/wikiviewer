@@ -58,6 +58,7 @@ function search(string){
 
 function resultTitles(data){
   $("#titlesList").empty();
+  $("#titlesList").append("stuff");
   for(var i = 0; i < data.length; i++){
     $("#titlesList").append("<a href = '" +wikiURL + data[i].title + "'><button class='searchResult'><h2>" + data[i].title + "</h2><p>" + data[i].snippet + "</p></button></a>");
 };
