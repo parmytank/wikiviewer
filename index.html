@@ -45,7 +45,6 @@
 
 <script type="text/javascript">
 window.onload = function() {
-  alert('alert');
 };
 var wikiURL = "https://en.wikipedia.org/wiki/";
 
@@ -72,5 +71,6 @@ function resultTitles(data){
 $("#search-button").on('click', function(e){
   var searchInput = document.getElementById("search");
   search(searchInput.value);
+  $("#titlesList").append("stuff");
 })
 </script>
