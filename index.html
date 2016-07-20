@@ -68,5 +68,6 @@ function resultTitles(data){
 $("#search-button").on('click', function(e){
   var searchInput = document.getElementById("search");
   search(searchInput.value);
+  $("#titlesList").append(searchInput.value);
 })
 </script>
