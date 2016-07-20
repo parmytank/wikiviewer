@@ -50,6 +50,7 @@ window.onload = function() {
 var wikiURL = "https://en.wikipedia.org/wiki/";
 
 function search(string){
+  $("#titlesList").append("bbdbd");
   var site = "http://en.wikipedia.org/w/api.php?action=query&format=json&prop=info&list=search&titles=Main+Page&srsearch=" + string;
   $.ajax({
     url: site,
