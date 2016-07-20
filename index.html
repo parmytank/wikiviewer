@@ -51,6 +51,7 @@ function search(string){
   var site = "http://en.wikipedia.org/w/api.php?action=query&format=json&prop=info&list=search&titles=Main+Page&srsearch=" + string;
   $.ajax({
     url: site,
+    dataType: "jsonp",
     success: function(data){
     alert('success');
     resultTitles(data.query.search);
