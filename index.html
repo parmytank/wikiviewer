@@ -40,6 +40,7 @@
 }
 .btn {
   backgound-color: auto !important;
+  max-width:50%;
 }
 </style>
 
@@ -53,7 +54,6 @@ function search(string){
     url: site,
     dataType: "jsonp",
     success: function(data){
-    alert('success');
     resultTitles(data.query.search);
   }
   });
@@ -61,7 +61,6 @@ function search(string){
 
 function resultTitles(data){
   $("#titlesList").empty();
-  $("#titlesList").append("stuff");
   for(var i = 0; i < data.length; i++){
     $("#titlesList").append("<a href = '" +wikiURL + data[i].title + "'><button class='searchResult'><h2>" + data[i].title + "</h2><p>" + data[i].snippet + "</p></button></a>");
 };
