@@ -52,6 +52,7 @@ function search(string){
     url: site,
     dataType: "jsonp",
     success: function(data){
+      alert('connection successful');
     resultTitles(data.query.search);
   }
   });
